@@ -1,0 +1,14 @@
+import socket
+
+s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)    //create the socket including the address family 
+s.bind((socket.gethostname(), 1024))     // to get the host and the port number
+
+s.listen(2)    // adding parameter 
+
+while True:   // conditional statement 
+
+clt1, adr1=s.accept()
+
+print(f"Connection to {adr} established") // print message 
+
+clt1.send(bytes("Socket Programming in Python","utf-8"))  // pass message to the server to client 

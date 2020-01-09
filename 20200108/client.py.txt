@@ -1,0 +1,9 @@
+import socket
+
+s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)  //create the socket including the address family 
+
+s.connect(socket.gethostname(), 1024) // connecting to the port number
+
+save= s.recv(1024) //saving the message variable and receiving it 
+
+print(save.decode("utf-8"))  // print the message and decode it using 
